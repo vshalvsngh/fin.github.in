@@ -16,7 +16,7 @@
             justify-content: center;
             align-items: center;
         }
-        img {
+        .desktop-image, .mobile-image {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -25,9 +25,21 @@
             object-fit: cover;
             transform: translate(-50%, -50%);
         }
+        .mobile-image {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            .desktop-image {
+                display: none;
+            }
+            .mobile-image {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="images/web.jpeg" alt="Full-Size Image">
+    <img src="images/web.jpeg" alt="Full-Size Image" class="desktop-image">
+    <img src="images/m.jpeg" alt="Full-Size Mobile Image" class="mobile-image">
 </body>
 </html>
